@@ -1,18 +1,38 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import Button from './Button.svelte';
+import Button from '$lib/components/buttons/Button.svelte';
+import LoadingState from "$lib/enums/LoadingState";
+import ButtonDisplay from "$lib/enums/ButtonDisplay";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: 'Example/Button',
+  title: 'UI/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+    label: {
+      control: 'text'
     },
+    name: {
+      control: 'text'
+    },
+    href: {
+      control: 'text'
+    },
+    value: {
+      control: 'text'
+    },
+    loadingState: {
+      options: LoadingState.all().map(s => s.name),
+      control: { type: 'select' }
+    },
+    display: {
+      options: ButtonDisplay.all().map(s => s.name),
+      control: { type: 'select' }
+    },
+    isActive: {
+      control: { type: 'boolean' }
+    }
   },
 } satisfies Meta<Button>;
 
@@ -20,29 +40,32 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Simple: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    loadingState: LoadingState.None,
+    label: 'Click Me',
   },
 };
 
-export const Secondary: Story = {
+export const Loading: Story = {
   args: {
-    label: 'Button',
+    loadingState: LoadingState.Loading,
+    label: 'Loading'
   },
 };
 
-export const Large: Story = {
+export const Anchor: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    loadingState: LoadingState.None,
+    label: 'Click Me',
+    href: 'https://www.heelsvsfaces.com'
   },
 };
 
-export const Small: Story = {
+export const Active: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    loadingState: LoadingState.None,
+    label: 'Click Me',
+    isActive: true
   },
 };
