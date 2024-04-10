@@ -51,18 +51,6 @@
     --brand-highlight: color-mix(in srgb, var(--brand-quinary) 40%, white);
 }
 
-body {
-    background-color: var(--brand-primary);
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-sans);
-    font-size: 16px;
-    gap: var(--size-2);
-    height: 100vh;
-    line-height: 20px;
-    padding: var(--size-2);
-}
-
 h1, h2, h3 {
     color: var(--brand-secondary);
     font-weight: var(--weight-black);
@@ -77,13 +65,4 @@ h2 {
 }
 h3 {
     font-size: var(--size-5);
-}
-
-hr {
-    color: var(--color-white);
-    padding: var(--size-2) 0;
-}
-.container {
-    display: flex;
-    gap: var(--size-2);
 }
