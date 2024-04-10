@@ -1,0 +1,89 @@
+@import "./repackage.css";
+
+:root {
+    --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: Consolas, Menlo, Monaco, "Liberation Mono", monospace;
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+    --weight-black: 900;
+
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-0: 0rem;
+    --size-1: 0.125rem;
+    --size-2: 0.5rem;
+    --size-3: 0.75rem;
+    --size-4: 1.0rem;
+    --size-5: 1.25rem;
+    --size-6: 1.5rem;
+    --size-7: 1.75rem;
+    --size-8: 2.0rem;
+    --size-9: 2.25rem;
+    --size-10: 2.5rem;
+
+    --radius-100: 100%;
+    --radius-xs: 3px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    --color-black: #3b3939;
+    --color-gray: #64666a;
+    --color-white: #fff5f5;
+    --color-red: #d74e4e;
+    --color-blue: #4ea5d7;
+    --color-yellow: #edae00;
+
+    --brand-primary: #DC2E1C;
+    --brand-primary-darker: color-mix(in srgb, var(--brand-primary), black 20%);
+    --brand-secondary: #F6F6F6;
+    --brand-tertiary: #248ED4;
+    --brand-quaternary: #3b3939;
+    --brand-quinary: #F1D129;
+    --brand-highlight: color-mix(in srgb, var(--brand-quinary) 40%, white);
+}
+
+body {
+    background-color: var(--brand-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    gap: var(--size-2);
+    height: 100vh;
+    line-height: 20px;
+    padding: var(--size-2);
+}
+
+h1, h2, h3 {
+    color: var(--brand-secondary);
+    font-weight: var(--weight-black);
+    padding: 0 0 var(--size-4) 0;
+    text-wrap: balance;
+}
+h1 {
+    font-size: var(--size-8);
+}
+h2 {
+    font-size: var(--size-6);
+}
+h3 {
+    font-size: var(--size-5);
+}
+
+hr {
+    color: var(--color-white);
+    padding: var(--size-2) 0;
+}
+.container {
+    display: flex;
+    gap: var(--size-2);
+}

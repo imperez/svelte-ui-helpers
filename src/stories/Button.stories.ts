@@ -58,7 +58,7 @@ export const Anchor: Story = {
   args: {
     loadingState: LoadingState.None,
     label: 'Click Me',
-    href: 'https://www.heelsvsfaces.com'
+    href: 'https://www.google.com'
   },
 };
 
